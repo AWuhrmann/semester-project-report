@@ -44,9 +44,11 @@
 \newif\if@epflbscthesis
 \newif\if@epflmscproject
 \newif\if@epflbscproject
+\newif\if@epflsemproject
 \DeclareOption{MScThesis}{\@epflmscthesistrue}
 \DeclareOption{BScThesis}{\@epflbscthesistrue}
 \DeclareOption{MScProject}{\@epflmscprojecttrue}
+\DeclareOption{SemProject}{\@epflsemprojecttrue}
 \DeclareOption{BScProject}{\@epflbscprojecttrue}
 
 \newif\if@lablogo
@@ -67,13 +69,16 @@
 \if@epflbscproject
   \renewcommand{\projectterm}{Bachelor Project Report}
 \fi
+\if@epflsemproject
+  \renewcommand{\projectterm}{Semester Project Report}
+\fi
 
-\def\@adviser{Thesis Advisor}
+\def\@adviser{Project Advisor}
 \newcommand{\adviser}[1]{
   \def\@adviser{#1}
 }
 
-\def\@supervisor{Thesis Supervisor}
+\def\@supervisor{Projects Supervisor}
 \newcommand{\supervisor}[1]{
   \def\@supervisor{#1}
 }
@@ -113,8 +118,8 @@
     \includegraphics[width=2.5in]{EPFLlogo}
 \end{textblock*}
 \if@lablogo
-\begin{textblock*}{4in}[0.3066,0.39](5.7in,0.85in)
-    \includegraphics[width=3in]{LABlogo}
+\begin{textblock*}{4in}[0.3066,0.39](5.9in,0.65in)
+    \includegraphics[width=3in]{myriad_optics_logo.jpeg}
 \end{textblock*}
 \fi
 \vspace*{\drop}
@@ -130,16 +135,16 @@ by \@author\par
 {Approved by the Examining Committee:}\par
 \vspace{1.5\baselineskip}
 \@adviser\\
-Thesis Advisor \\[1\baselineskip]
-\@expert\\
-External Expert \\[1\baselineskip]
+Project Advisor \\[1\baselineskip]
+%\@expert\\
+%External Expert \\[1\baselineskip]
 \@supervisor\\
-Thesis Supervisor\par
+Project Supervisors\par
 \centering
 \vspace{1\baselineskip}
-EPFL IC IINFCOM HEXHIVE \\
-BC 160 (Bâtiment BC) \\
-Station 14 \\
+EPFL SB IPHYS GR-GA \\
+PH D3 435 (Bâtiment PH) \\
+Station 3 \\
 CH-1015 Lausanne \\[\baselineskip]
 \today
 \par
